@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/this_is_example_view_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:id="@+id/this_is_example_view_id" >
+    android:gravity="top" >
 
     <TextView
-        android:id="@+id/example_text"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:text="Welcome to Dinner Planner!\n\nHere you will be able to easily plan your dinner.\n\nOn the next page start by selecting number of participants.\nThen select your courses.\n\nWatch Magic Happen!"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="10pt" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:background="#ff0000"
+        android:text="Start" />
 
 </RelativeLayout>
