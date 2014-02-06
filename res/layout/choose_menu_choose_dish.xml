@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp"
-        android:src="@drawable/chooseDish_popupFrame" />
+        android:src="@drawable/choose_dish_popup_frame" />
 
     <TextView
         android:id="@+id/textView1"
