@@ -7,25 +7,6 @@
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/exampleStarter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/exampleStarter2"
-        android:layout_marginLeft="28dp"
-        android:layout_toRightOf="@+id/mainCourse"
-        android:text="Baked Brie"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/exampleStarter2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/mainCourse"
-        android:layout_alignLeft="@+id/starterHeadLine"
-        android:text="Sourdough"
-        tools:ignore="HardcodedText" />
-
-    <TextView
         android:id="@+id/exampleMainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +19,7 @@
         android:id="@+id/starterHeadLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/exampleStarter2"
+        android:layout_above="@+id/mainCourse"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="53dp"
         android:layout_marginLeft="28dp"
@@ -61,7 +42,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/exampleDessert"
         android:layout_alignBottom="@+id/exampleDessert"
-        android:layout_alignLeft="@+id/exampleStarter"
         android:text="Icecream"
         tools:ignore="HardcodedText" />
 
@@ -80,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/exampleMainCourse"
-        android:layout_alignLeft="@+id/exampleStarter2"
+        android:layout_alignLeft="@+id/starterHeadLine"
         android:layout_marginBottom="64dp"
         android:text="@string/main_course"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -116,31 +96,6 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <HorizontalScrollView
-        android:id="@+id/starterScrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/starterHeadLine" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/chooseMenuHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/starterScrollView"
-        android:layout_marginBottom="19dp"
-        android:layout_toRightOf="@+id/exampleStarter2"
-        android:text="@string/choose_menu"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <TextView
         android:id="@+id/line2"
         android:layout_width="wrap_content"
@@ -157,7 +112,33 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/mainCourse"
         android:background="#ff0000"
-        android:text="@string/choose"
-        ></Button>
+        android:text="@string/choose" >
+    </Button>
+
+    <HorizontalScrollView
+        android:id="@+id/starterScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mainCourse"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+
+        <LinearLayout
+            android:id="@+id/startersScrollLinear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/chooseMenuHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/line2"
+        android:layout_marginBottom="18dp"
+        android:layout_toRightOf="@+id/exampleMainCourse"
+        android:text="@string/choose_menu"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
