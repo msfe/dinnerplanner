@@ -1,5 +1,7 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
+import se.kth.csc.iprog.dinnerplanner.android.view.MainMenuView;
+import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +14,9 @@ public class MainMenuActivity extends Activity {
 		// Default call to load previous state
 		super.onCreate(savedInstanceState);
 
+		DinnerModel model = ((DinnerPlannerApplication) this.getApplication())
+				.getModel();
+
 		LayoutInflater inflater = getLayoutInflater();
 		getWindow().addContentView(
 				inflater.inflate(R.layout.choose_menu_main_screen, null),
@@ -23,8 +28,8 @@ public class MainMenuActivity extends Activity {
 						ViewGroup.LayoutParams.MATCH_PARENT));
 
 		// Creating the view class instance
-		// MainMenuView mainView = new
-		// MainMenuView(findViewById(R.id.this_is_chooseMenu_mainScreen));
+		MainMenuView mainView = new MainMenuView(
+				findViewById(R.id.this_is_chooseMenu_mainScreen), model);
 
 	}
 }

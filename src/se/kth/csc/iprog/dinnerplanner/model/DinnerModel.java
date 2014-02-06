@@ -72,6 +72,14 @@ public class DinnerModel implements IDinnerModel {
 		dish2.addIngredient(dish2ing10);
 		dish2.addIngredient(dish2ing11);
 		allDishes.add(dish2);
+		
+		Dish dish3 = new Dish(
+				"Boiled eggs",
+				Dish.STARTER,
+				"egg.jpg",
+				"Boil and eat");
+		dish3.addIngredient(dish1ing1);
+		allDishes.add(dish3);
 
 	}
 
