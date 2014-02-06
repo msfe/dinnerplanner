@@ -1,6 +1,6 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
-import se.kth.csc.iprog.dinnerplanner.android.view.ExampleView;
+import se.kth.csc.iprog.dinnerplanner.android.view.StartView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,19 +17,11 @@ public class MainActivity extends Activity {
     	
     	// Set the view for the main activity screen
     	// it must come before any call to findViewById method
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.start_view);
         
     	// Creating the view class instance
-    	ExampleView mainView = new ExampleView(findViewById(R.id.this_is_example_view_id));
+    	StartView startView = new StartView(findViewById(R.id.startViewID));
     	
-    	Button next = (Button)this.findViewById(R.id.chooseDish);
-        next.setOnClickListener(new OnClickListener() {
-          //@Override
-          public void onClick(View v) {
-        	  Intent myIntent = new Intent(v.getContext(), MainMenuActivity.class);
-              startActivityForResult(myIntent, 0);
-          }
-        });
     }
 
 }
