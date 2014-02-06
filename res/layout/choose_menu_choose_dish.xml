@@ -3,7 +3,7 @@
     android:id="@+id/this_is_chooseMenu_chooseDish"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="top" >
+    android:gravity="top" xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/chooseDishPopupFrame"
@@ -12,10 +12,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp"
-        android:src="@drawable/choose_dish_popup_frame" />
+        android:src="@drawable/choose_dish_popup_frame"
+        tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/blabla"
+        android:id="@+id/nameOfDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/chooseDishPopupFrame"
@@ -23,25 +24,27 @@
         android:layout_marginLeft="67dp"
         android:layout_marginTop="24dp"
         android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/mainCourse"
+        android:id="@+id/separationBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/chooseDishPopupFrame"
-        android:layout_below="@+id/blabla"
+        android:layout_below="@+id/nameOfDish"
         android:layout_marginLeft="48dp"
-        android:text="-------------------------------------" />
+        android:text="-------------------------------------"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/staticCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/mainCourse"
-        android:layout_below="@+id/mainCourse"
+        android:layout_alignRight="@+id/separationBar"
+        android:layout_below="@+id/separationBar"
         android:layout_marginTop="15dp"
-        android:text="Cost: " />
+        android:text="@string/cost_" />
 
     <TextView
         android:id="@+id/dishCostPerPerson"
@@ -49,26 +52,27 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/staticCost"
         android:layout_below="@+id/staticCost"
-        android:text="TextView" />
+        android:text="TextView"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/chooseDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/chooseDishPopupFrame"
-        android:layout_alignRight="@+id/blabla"
+        android:layout_alignRight="@+id/nameOfDish"
         android:layout_marginBottom="14dp"
         android:background="#ff0000"
-        android:text="Choose" />
+        android:text="@string/choose" />
 
     <Button
         android:id="@+id/close"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/blabla"
+        android:layout_alignBottom="@+id/nameOfDish"
         android:layout_alignRight="@+id/chooseDishPopupFrame"
-        android:text="X" />
+        android:text="@string/x" />
 
     <TextView
         android:id="@+id/dishCost"
@@ -77,6 +81,7 @@
         android:layout_alignBaseline="@+id/staticCost"
         android:layout_alignBottom="@+id/staticCost"
         android:layout_toRightOf="@+id/staticCost"
-        android:text="TextView" />
+        android:text="TextView"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>
