@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/this_is_showInfoOnCourses_mainScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top" >
 
     <ImageView
-        android:id="@+id/chooseDishPopupFrame"
+        android:id="@+id/ingredientsButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
@@ -16,30 +17,31 @@
         android:src="@drawable/ingridients" />
 
     <TextView
-        android:id="@+id/blabla"
+        android:id="@+id/line3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chooseDishPopupFrame"
+        android:layout_below="@+id/ingredientsButton"
         android:layout_centerHorizontal="true"
-        android:text="---------------------------------------------------------" />
+        android:text="---------------------------------------------------------"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/mainCourse"
+        android:id="@+id/instructionsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/blabla"
-        android:layout_alignTop="@+id/chooseDishPopupFrame"
+        android:layout_alignRight="@+id/line3"
+        android:layout_alignTop="@+id/ingredientsButton"
         android:layout_marginRight="44dp"
-        android:text="Instructions" />
+        android:text="@string/instructions" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView1"
+        android:id="@+id/menuChoosenScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/mainCourse"
+        android:layout_below="@+id/instructionsHeader"
         android:layout_marginTop="21dp"
-        android:layout_toRightOf="@+id/chooseDishPopupFrame" >
+        android:layout_toRightOf="@+id/ingredientsButton" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,5 +49,5 @@
             android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
-    
+
 </RelativeLayout>

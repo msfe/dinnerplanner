@@ -14,5 +14,6 @@
     <string name="choose_menu">Choose Menu</string>
     <string name="participants_">Participants:</string>
     <string name="total_cost_">Total cost:</string>
+    <string name="instructions">Instructions</string>
 
 </resources>
