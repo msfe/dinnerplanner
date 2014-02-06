@@ -1,89 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/this_is_chooseMenu_mainScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/staticCost"
+        android:id="@+id/exampleStarter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignBottom="@+id/exampleStarter2"
         android:layout_marginLeft="28dp"
         android:layout_toRightOf="@+id/mainCourse"
-        android:text="Baked Brie" />
+        android:text="Baked Brie"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/exampleStarter2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/mainCourse"
-        android:layout_alignLeft="@+id/blabla"
-        android:text="Sourdough" />
+        android:layout_alignLeft="@+id/starterHeadLine"
+        android:text="Sourdough"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/dishCostPerPerson"
+        android:id="@+id/exampleMainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/dishCost"
+        android:layout_above="@+id/dessertHeader"
         android:layout_alignLeft="@+id/mainCourse"
-        android:text="Meatballs" />
+        android:text="Meatballs"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/blabla"
+        android:id="@+id/starterHeadLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView7"
+        android:layout_above="@+id/exampleStarter2"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="53dp"
         android:layout_marginLeft="28dp"
-        android:text="Starter"
+        android:text="@string/starter"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/exampleDessert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/dishCost"
+        android:layout_alignLeft="@+id/dessertHeader"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="66dp"
-        android:text="Toast" />
+        android:text="Toast"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/exampleDessert2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/staticCost"
-        android:text="Icecream" />
+        android:layout_alignBaseline="@+id/exampleDessert"
+        android:layout_alignBottom="@+id/exampleDessert"
+        android:layout_alignLeft="@+id/exampleStarter"
+        android:text="Icecream"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/dishCost"
+        android:id="@+id/dessertHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView6"
-        android:layout_alignRight="@+id/dishCostPerPerson"
+        android:layout_above="@+id/exampleDessert"
+        android:layout_alignRight="@+id/exampleMainCourse"
         android:layout_marginBottom="60dp"
-        android:text="Dessert"
+        android:text="@string/dessert"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/mainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/dishCostPerPerson"
-        android:layout_alignLeft="@+id/textView7"
+        android:layout_above="@+id/exampleMainCourse"
+        android:layout_alignLeft="@+id/exampleStarter2"
         android:layout_marginBottom="64dp"
-        android:text="Main Course"
+        android:text="@string/main_course"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView1"
+        android:id="@+id/dessertScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView6"
+        android:layout_above="@+id/exampleDessert"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="32dp" >
@@ -96,7 +102,7 @@
     </HorizontalScrollView>
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
+        android:id="@+id/mainCourseScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -111,12 +117,12 @@
     </HorizontalScrollView>
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView3"
+        android:id="@+id/starterScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/blabla" >
+        android:layout_alignTop="@+id/starterHeadLine" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,22 +132,23 @@
     </HorizontalScrollView>
 
     <TextView
-        android:id="@+id/chooseMenu"
+        android:id="@+id/chooseMenuHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/horizontalScrollView3"
+        android:layout_above="@+id/starterScrollView"
         android:layout_marginBottom="19dp"
-        android:layout_toRightOf="@+id/textView7"
-        android:text="Choose Menu"
+        android:layout_toRightOf="@+id/exampleStarter2"
+        android:text="@string/choose_menu"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/line2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/blabla"
+        android:layout_above="@+id/starterHeadLine"
         android:layout_centerHorizontal="true"
-        android:text="----------------------------------------------------" />
+        android:text="----------------------------------------------------"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/chooseDish"
@@ -150,6 +157,7 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/mainCourse"
         android:background="#ff0000"
-        android:text="Create" />
-    
+        android:text="@string/choose"
+        ></Button>
+
 </RelativeLayout>

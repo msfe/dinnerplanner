@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/this_is_chooseMenu_topView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/blabla"
+        android:id="@+id/participantsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Participants:" />
+        android:text="@string/participants_" />
 
     <TextView
-        android:id="@+id/mainCourse"
+        android:id="@+id/totalCostHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="75dp"
-        android:text="Total cost:" />
+        android:text="@string/total_cost_" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/numGuestsDropDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/mainCourse"
-        android:layout_toRightOf="@+id/blabla" />
+        android:layout_toLeftOf="@+id/totalCostHeader"
+        android:layout_toRightOf="@+id/participantsHeader" />
 
     <TextView
-        android:id="@+id/staticCost"
+        android:id="@+id/dynamicCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="36dp"
-        android:text="0 kr" />
-    
+        android:text="0 kr"
+        tools:ignore="HardcodedText" />
+
 </RelativeLayout>

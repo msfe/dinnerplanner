@@ -8,5 +8,11 @@
     <string name="cost_">"Cost: "</string>
     <string name="choose">Choose</string>
     <string name="x">X</string>
+    <string name="starter">Starter</string>
+    <string name="dessert">Dessert</string>
+    <string name="main_course">Main Course</string>
+    <string name="choose_menu">Choose Menu</string>
+    <string name="participants_">Participants:</string>
+    <string name="total_cost_">Total cost:</string>
 
 </resources>
