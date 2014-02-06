@@ -6,7 +6,7 @@
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/blabla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -14,7 +14,7 @@
         android:text="Participants:" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -27,11 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView1" />
+        android:layout_toLeftOf="@+id/mainCourse"
+        android:layout_toRightOf="@+id/blabla" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/staticCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

@@ -6,7 +6,7 @@
     android:gravity="top" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/chooseDishPopupFrame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -15,68 +15,68 @@
         android:src="@drawable/choose_dish_popup_frame" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/blabla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignTop="@+id/imageView1"
+        android:layout_alignLeft="@+id/chooseDishPopupFrame"
+        android:layout_alignTop="@+id/chooseDishPopupFrame"
         android:layout_marginLeft="67dp"
         android:layout_marginTop="24dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/chooseDishPopupFrame"
+        android:layout_below="@+id/blabla"
         android:layout_marginLeft="48dp"
         android:text="-------------------------------------" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/staticCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/mainCourse"
+        android:layout_below="@+id/mainCourse"
         android:layout_marginTop="15dp"
         android:text="Cost: " />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/dishCostPerPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignRight="@+id/staticCost"
+        android:layout_below="@+id/staticCost"
         android:text="TextView" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/chooseDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignBottom="@+id/chooseDishPopupFrame"
+        android:layout_alignRight="@+id/blabla"
         android:layout_marginBottom="14dp"
         android:background="#ff0000"
         android:text="Choose" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/close"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignRight="@+id/imageView1"
+        android:layout_alignBottom="@+id/blabla"
+        android:layout_alignRight="@+id/chooseDishPopupFrame"
         android:text="X" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/dishCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toRightOf="@+id/textView3"
+        android:layout_alignBaseline="@+id/staticCost"
+        android:layout_alignBottom="@+id/staticCost"
+        android:layout_toRightOf="@+id/staticCost"
         android:text="TextView" />
 
 </RelativeLayout>

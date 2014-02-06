@@ -13,7 +13,7 @@ public class ExampleView {
 		// store in the class the reference to the Android View
 		this.view = view;
 
-		TextView example = (TextView) view.findViewById(R.id.textView1);
+		TextView example = (TextView) view.findViewById(R.id.blabla);
 		
 		
 		//example.setText("Hello world");

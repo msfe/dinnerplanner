@@ -6,7 +6,7 @@
     android:gravity="top" >
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/chooseDishPopupFrame"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
@@ -16,19 +16,19 @@
         android:src="@drawable/ingridients" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/blabla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/chooseDishPopupFrame"
         android:layout_centerHorizontal="true"
         android:text="---------------------------------------------------------" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_alignTop="@+id/imageView1"
+        android:layout_alignRight="@+id/blabla"
+        android:layout_alignTop="@+id/chooseDishPopupFrame"
         android:layout_marginRight="44dp"
         android:text="Instructions" />
 
@@ -37,9 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/mainCourse"
         android:layout_marginTop="21dp"
-        android:layout_toRightOf="@+id/imageView1" >
+        android:layout_toRightOf="@+id/chooseDishPopupFrame" >
 
         <LinearLayout
             android:layout_width="match_parent"
