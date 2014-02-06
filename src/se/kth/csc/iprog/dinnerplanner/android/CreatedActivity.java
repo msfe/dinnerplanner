@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-public class MainMenuActivity extends Activity {
+public class CreatedActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class MainMenuActivity extends Activity {
 
 		LayoutInflater inflater = getLayoutInflater();
 		getWindow().addContentView(
-				inflater.inflate(R.layout.choose_menu_main_screen, null),
+				inflater.inflate(R.layout.show_info_on_courses_ingridients_screen, null),
 				new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.MATCH_PARENT));
 		getWindow().addContentView(
