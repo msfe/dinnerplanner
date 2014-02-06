@@ -6,7 +6,7 @@
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/participants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -14,7 +14,7 @@
         android:text="Participants:" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/total_cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -23,15 +23,15 @@
         android:text="Total cost:" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/choose_num_participants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toRightOf="@+id/textView1" />
+        android:layout_toLeftOf="@+id/total_cost"
+        android:layout_toRightOf="@+id/participants" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
