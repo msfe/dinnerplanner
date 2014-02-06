@@ -6,20 +6,20 @@
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView7"
         android:layout_marginLeft="28dp"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_toRightOf="@+id/total_cost"
         android:text="Baked Brie" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_above="@+id/total_cost"
+        android:layout_alignLeft="@+id/participants"
         android:text="Sourdough" />
 
     <TextView
@@ -27,11 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView5"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/total_cost"
         android:text="Meatballs" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/participants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView7"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignLeft="@+id/price"
         android:text="Icecream" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/total_cost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView4"
@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView1" >
+        android:layout_alignTop="@+id/participants" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -139,7 +139,7 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
+        android:layout_above="@+id/participants"
         android:layout_centerHorizontal="true"
         android:text="----------------------------------------------------" />
 
@@ -148,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_toRightOf="@+id/total_cost"
         android:background="#ff0000"
         android:text="Create" />
     
