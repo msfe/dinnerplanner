@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/this_is_choose_menu2"
+    android:id="@+id/this_is_choose_bakedBrie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top" >
@@ -58,7 +58,7 @@
         android:layout_above="@+id/textView2"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@+id/textView1"
-        android:text="80 kr"
+        android:text="0 kr"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -173,19 +173,29 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_above="@+id/textView6"
-        android:layout_alignLeft="@+id/imageView1"
-        android:src="@drawable/bakedbrie_redscreen" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/choose_bakedbrie_screen" />
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/textView10"
-        android:layout_alignLeft="@+id/imageView3"
-        android:src="@drawable/meatballs" />
+        android:layout_alignRight="@+id/imageView5"
+        android:background = "#ff0000"
+        android:text="Choose" />
+
+    <Button
+        android:id="@+id/button3"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignRight="@+id/imageView6"
+        android:layout_below="@+id/textView4"
+        android:text="X" />
 
     <Button
         android:id="@+id/button1"

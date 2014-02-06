@@ -30,7 +30,6 @@ public class MainActivity extends Activity {
               startActivityForResult(myIntent, 0);
           }
         });
-
     }
 
 }

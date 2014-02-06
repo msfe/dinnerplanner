@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/this_is_choose_menu2"
+    android:id="@+id/this_is_choose_meatballs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top" >
@@ -171,22 +171,6 @@
         android:layout_alignLeft="@+id/imageView5"
         android:text="Toast" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_above="@+id/textView6"
-        android:layout_alignLeft="@+id/imageView1"
-        android:src="@drawable/bakedbrie_redscreen" />
-
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_above="@+id/textView10"
-        android:layout_alignLeft="@+id/imageView3"
-        android:src="@drawable/meatballs" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -196,5 +180,31 @@
         android:layout_below="@+id/textView13"
         android:background="#ff0000"
         android:text="Create" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_below="@+id/textView4"
+        android:src="@drawable/choose_meatballs_screen" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView10"
+        android:layout_alignRight="@+id/imageView5"
+        android:background="#ff0000"
+        android:text="Choose" />
+
+    <Button
+        android:id="@+id/button3"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignRight="@+id/imageView6"
+        android:layout_alignTop="@+id/imageView6"
+        android:text="X" />
 
 </RelativeLayout>
