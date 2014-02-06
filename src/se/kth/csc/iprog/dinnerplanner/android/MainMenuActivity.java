@@ -15,16 +15,6 @@ public class MainMenuActivity extends Activity {
 		// Default call to load previous state
 		super.onCreate(savedInstanceState);
 
-		LayoutParams v = new ViewGroup.LayoutParams(
-				ViewGroup.LayoutParams.MATCH_PARENT,
-				ViewGroup.LayoutParams.MATCH_PARENT);
-		/*
-		 * LayoutInflater inflater = getLayoutInflater();
-		 * getWindow().addContentView(inflater.inflate(R.layout.extra_layout,
-		 * null), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
-		 * ViewGroup.LayoutParams.FILL_PARENT));
-		 */
-
 		LayoutInflater inflater = getLayoutInflater();
 		getWindow().addContentView(
 				inflater.inflate(R.layout.choose_menu_main_screen, null),
