@@ -14,7 +14,7 @@ public class MainMenuView {
 		// store in the class the reference to the Android View
 		this.view = view;
 
-		TextView mainMenu = (TextView) view.findViewById(R.id.main_menu_view_id);
+		TextView mainMenu = (TextView) view.findViewById(R.id.this_is_chooseMenu_mainScreen);
 		//example.setText("Hello world");
 
 		// Setup the rest of the view layout
