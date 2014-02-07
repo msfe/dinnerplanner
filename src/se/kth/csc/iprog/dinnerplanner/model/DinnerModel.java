@@ -200,5 +200,21 @@ public class DinnerModel implements IDinnerModel {
 		}
 		return cost;
 	}
+	
+	public boolean addDishToMenu(Dish dish){		
+		if(pickedDishes.contains(dish)){
+			return false;
+		}
+		pickedDishes.add(dish);
+		return true;
+	}
+	
+	public boolean removeDishFromMenu(Dish dish){		
+		if(pickedDishes.contains(dish)){
+			pickedDishes.remove(dish);
+			return true;
+		}
+		return false;
+	}
 
 }
