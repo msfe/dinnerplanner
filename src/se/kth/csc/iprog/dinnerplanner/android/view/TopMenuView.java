@@ -25,7 +25,8 @@ public class TopMenuView {
 		
 		Spinner participants = (Spinner) view.findViewById(R.id.numGuestsDropDown);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(view.getContext(), R.array.participants_array, android.R.layout.simple_spinner_dropdown_item);
-		
+		int guests = adapter.getPosition("2");
+		participants.setSelection(guests);
 		// Specify the layout to use when the list of choices appears
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
