@@ -6,50 +6,16 @@
     android:layout_height="match_parent"
     android:gravity="top" >
 
-    <HorizontalScrollView
-        android:id="@+id/mainCourseScrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true" >
-
-        <LinearLayout
-            android:id="@+id/mainsScrollLinear"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <Button
-        android:id="@+id/chooseDish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/mainCourse"
-        android:background="#ff0000"
-        android:text="@string/choose" >
-    </Button>
-
     <TextView
         android:id="@+id/chooseMenuHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="46dp"
         android:text="@string/choose_menu"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/mainCourse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/mainCourseScrollView"
-        android:layout_alignLeft="@+id/starterHeadLine"
-        android:text="@string/main_course"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/line2"
@@ -69,16 +35,6 @@
         android:text="@string/starter"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/dessertHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/chooseDish"
-        android:layout_alignLeft="@+id/mainCourse"
-        android:layout_marginBottom="67dp"
-        android:text="@string/dessert"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <HorizontalScrollView
         android:id="@+id/starterScrollView"
         android:layout_width="wrap_content"
@@ -88,24 +44,57 @@
 
         <LinearLayout
             android:id="@+id/startersScrollLinear"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
 
+    <TextView
+        android:id="@+id/mainCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/starterHeadLine"
+        android:layout_below="@+id/starterScrollView"
+        android:text="@string/main_course"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <HorizontalScrollView
+        android:id="@+id/mainCourseScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/mainCourse" >
+
+        <LinearLayout
+            android:id="@+id/mainsScrollLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/dessertHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/starterHeadLine"
+        android:layout_below="@id/mainCourseScrollView"
+        android:layout_marginBottom="67dp"
+        android:text="@string/dessert"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <HorizontalScrollView
         android:id="@+id/dessertScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/chooseDish"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="42dp"
-        android:layout_toRightOf="@+id/starterScrollView" >
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/dessertHeader"
+        android:layout_marginBottom="42dp" >
 
         <LinearLayout
             android:id="@+id/dessertsScrollLinear"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal" >
         </LinearLayout>

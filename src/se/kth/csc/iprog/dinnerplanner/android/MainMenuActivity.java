@@ -29,18 +29,18 @@ public class MainMenuActivity extends Activity {
 				inflater.inflate(R.layout.choose_menu_top_view, null),
 				new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.MATCH_PARENT));
-		getWindow().addContentView(
-                inflater.inflate(R.layout.choose_menu_choose_dish, null),
-                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
+//		getWindow().addContentView(
+//                inflater.inflate(R.layout.choose_menu_choose_dish, null),
+//                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+//                        ViewGroup.LayoutParams.MATCH_PARENT));
 
 		// Creating the view class instance
 		MainMenuView mainView = new MainMenuView(
 				findViewById(R.id.this_is_chooseMenu_mainScreen), model);
 		TopMenuView topMenu = new TopMenuView(
 				findViewById(R.id.this_is_chooseMenu_topView), model);
-		PopUpMenuView popUpMenu = new PopUpMenuView(
-                findViewById(R.id.this_is_chooseMenu_chooseDish), (Dish) model.getDishes().toArray()[0], model);
+//		PopUpMenuView popUpMenu = new PopUpMenuView(
+//                findViewById(R.id.this_is_chooseMenu_chooseDish), (Dish) model.getDishes().toArray()[0], model);
 
 	}
 }
