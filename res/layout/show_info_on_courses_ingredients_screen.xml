@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/this_is_showInfoOnCourses_mainScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top" >
+
+    <include
+        android:id="@+id/showIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="57dp"
+        layout="@layout/text_under_image" />
+
+    <LinearLayout
+        android:id="@+id/dishList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/showIngredients"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/showIngredients" >
+
+        <include
+            android:id="@+id/starter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            layout="@layout/text_under_image" />
+
+        <include
+            android:id="@+id/main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            layout="@layout/text_under_image" />
+
+        <include
+            android:id="@+id/dessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            layout="@layout/text_under_image" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/instructionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dishList"
+        android:layout_alignLeft="@id/dishList"
+        android:layout_alignRight="@id/dishList"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:text="@string/instructions"
+        android:textAlignment="center"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/hardcodedLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showIngredients"
+        android:layout_centerHorizontal="true"
+        android:text="-----------------------------------------"
+        tools:ignore="HardcodedText" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hardcodedLine"
+        android:layout_marginLeft="14dp">
+		
+        <TextView 
+            android:id="@+id/title"
+        	android:textSize="16sp"
+        	android:textStyle="bold"
+        	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        
+        <TextView
+            android:id="@+id/subTitle"
+            android:textSize="14sp"
+        	android:textStyle="italic"
+        	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/title"
+            />
+        
+        <TextView
+            android:id="@+id/chosenText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subTitle"
+            android:layout_marginTop="16dp"
+            android:ems="10" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

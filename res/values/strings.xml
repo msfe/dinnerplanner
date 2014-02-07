@@ -15,5 +15,6 @@
     <string name="participants_">Participants:</string>
     <string name="total_cost_">Total cost:</string>
     <string name="instructions">Instructions</string>
+    <string name="title_activity_ingredient_view">IngredientView</string>
 
 </resources>
