@@ -20,8 +20,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.start_view);
         
     	// Creating the view class instance
-    	StartView startView = new StartView(findViewById(R.id.startViewID));
-    	
+    	StartView startView = new StartView(findViewById(R.id.startViewID));	
     }
-
 }

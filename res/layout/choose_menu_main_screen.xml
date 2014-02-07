@@ -7,138 +7,97 @@
     android:gravity="top" >
 
     <TextView
-        android:id="@+id/exampleMainCourse"
+        android:id="@+id/chooseMenuHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/dessertHeader"
-        android:layout_alignLeft="@+id/mainCourse"
-        android:text="Meatballs"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="@string/choose_menu"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chooseMenuHeader"
+        android:layout_centerHorizontal="true"
+        android:text="----------------------------------------------------"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/starterHeadLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/mainCourse"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="53dp"
-        android:layout_marginLeft="28dp"
+        android:layout_below="@+id/line2"
+        android:layout_toLeftOf="@+id/chooseMenuHeader"
         android:text="@string/starter"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/exampleDessert"
+    <HorizontalScrollView
+        android:id="@+id/starterScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/dessertHeader"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="66dp"
-        android:text="Toast"
-        tools:ignore="HardcodedText" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/starterHeadLine" >
 
-    <TextView
-        android:id="@+id/exampleDessert2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/exampleDessert"
-        android:layout_alignBottom="@+id/exampleDessert"
-        android:text="Icecream"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/dessertHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/exampleDessert"
-        android:layout_alignRight="@+id/exampleMainCourse"
-        android:layout_marginBottom="60dp"
-        android:text="@string/dessert"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:id="@+id/startersScrollLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/mainCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/exampleMainCourse"
-        android:layout_alignLeft="@+id/starterHeadLine"
-        android:layout_marginBottom="64dp"
+        android:layout_alignLeft="@id/starterHeadLine"
+        android:layout_below="@+id/starterScrollView"
         android:text="@string/main_course"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <HorizontalScrollView
-        android:id="@+id/dessertScrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/exampleDessert"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="32dp" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
-        </LinearLayout>
-    </HorizontalScrollView>
 
     <HorizontalScrollView
         android:id="@+id/mainCourseScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true" >
+        android:layout_below="@+id/mainCourse" >
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/mainsScrollLinear"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
-        android:id="@+id/line2"
+        android:id="@+id/dessertHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/starterHeadLine"
-        android:layout_centerHorizontal="true"
-        android:text="----------------------------------------------------"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/chooseDish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/mainCourse"
-        android:background="#ff0000"
-        android:text="@string/choose" >
-    </Button>
+        android:layout_alignLeft="@id/starterHeadLine"
+        android:layout_below="@id/mainCourseScrollView"
+        android:layout_marginBottom="67dp"
+        android:text="@string/dessert"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <HorizontalScrollView
-        android:id="@+id/starterScrollView"
+        android:id="@+id/dessertScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/mainCourse"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
+        android:layout_below="@id/dessertHeader"
+        android:layout_marginBottom="42dp" >
 
         <LinearLayout
-            android:id="@+id/startersScrollLinear"
-            android:layout_width="match_parent"
+            android:id="@+id/dessertsScrollLinear"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/chooseMenuHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/line2"
-        android:layout_marginBottom="18dp"
-        android:layout_toRightOf="@+id/exampleMainCourse"
-        android:text="@string/choose_menu"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

@@ -52,6 +52,14 @@ public class Dish {
 		return ingredients;
 	}
 	
+	public double costOfDish() {
+	    double cost = 0;
+	    for(Ingredient ingredient : ingredients) {
+	        cost = cost + ingredient.getPrice();
+	    }
+	    return cost;
+	}
+	
 	public void addIngredient(Ingredient ing){
 		ingredients.add(ing);
 	}
