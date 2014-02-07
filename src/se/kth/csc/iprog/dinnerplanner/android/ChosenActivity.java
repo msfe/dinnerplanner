@@ -3,6 +3,7 @@ package se.kth.csc.iprog.dinnerplanner.android;
 import se.kth.csc.iprog.dinnerplanner.android.view.ChosenDishesView;
 import se.kth.csc.iprog.dinnerplanner.android.view.CreatedView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
+import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,13 +11,19 @@ import android.view.ViewGroup;
 
 public class ChosenActivity extends Activity {
 
+	private static final boolean debug = true;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// Default call to load previous state
 		super.onCreate(savedInstanceState);
 
 		DinnerModel model = ((DinnerPlannerApplication) this.getApplication()).getModel();
-		
+		//TODO Remove line below
+		if(debug){
+		model.addDishToMenu(model.getSelectedDish(Dish.MAIN));
+		model.setNumberOfGuests(2);
+		}
 		LayoutInflater inflater = getLayoutInflater();
 		getWindow().addContentView(
 				inflater.inflate(R.layout.show_info_on_courses_ingredients_screen, null),
