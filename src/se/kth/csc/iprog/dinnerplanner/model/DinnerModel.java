@@ -167,6 +167,9 @@ public class DinnerModel implements IDinnerModel {
 		HashSet<Ingredient> returnListIngredients = new HashSet<Ingredient>();
 		ArrayList<Ingredient> existingIngredients = new ArrayList<Ingredient>();
 		for (Dish dish : pickedDishes) {
+			if(dish==null){
+				continue;
+			}
 			Set<Ingredient> dishIngredients = dish.getIngredients();
 			for (Ingredient ingredient : dishIngredients) {
 				if (returnListIngredients.contains(ingredient)) {
