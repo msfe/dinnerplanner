@@ -7,7 +7,7 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import se.kth.csc.iprog.dinnerplanner.model.Ingredient;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ChosenDishesView {
@@ -32,7 +32,7 @@ public class ChosenDishesView {
 			sb.append(" ");
 			sb.append(ingredient.getQuantity());
 			sb.append(" ");
-			sb.append(ingredient.getQuantity());
+			sb.append(ingredient.getUnit());
 			sb.append("\n");
 		}
 		
@@ -41,20 +41,31 @@ public class ChosenDishesView {
 		ingredientsTextView.setText(sb.toString());
 	}
 	
-	// TODO: Change from text to images
-//	public void fillPickedMenuImages(DinnerModel model, View view){
-//		Set<Dish> dishes = model.getDishes();
-//		
-//		for(Dish dish : dishes){
-//			TextView image = new TextView(view.getContext());
-//			image.setText(dish.getName());
-//			image.setTag(dish.getName());
-//			dishesList.addView(image);
-//		}
-//	}
+	// TODO: Add the images also
+	public void fillPickedMenuImages(DinnerModel model, View view){
+		Set<Dish> dishes = model.getDishes();
+		TextView starter = (TextView) view.findViewById(R.id.starter).findViewById(R.id.imageText);
+		TextView main = (TextView) view.findViewById(R.id.main).findViewById(R.id.imageText);
+		TextView dessert = (TextView) view.findViewById(R.id.dessert).findViewById(R.id.imageText);
+		
+		for(Dish dish : dishes){
+			switch(dish.getType()){
+			case(Dish.STARTER): 
+				starter.setText(dish.getName());
+				break;
+			case(Dish.MAIN): 
+				main.setText(dish.getName());
+				break;
+			case(Dish.DESERT): 
+				dessert.setText(dish.getName());
+				break;
+			}
+		}
+	}
 	
-//	public void fillInstruction(DinnerModel model, View view){
-//		
-//	}
+	// TODO: Add this function
+	public void fillInstruction(DinnerModel model, View view){
+		
+	}
 	
 }
