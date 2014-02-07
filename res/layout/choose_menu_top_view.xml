@@ -37,8 +37,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="36dp"
-        android:text="0 kr"
-        tools:ignore="HardcodedText" />
+        android:layout_marginRight="36dp" />
 
 </RelativeLayout>
