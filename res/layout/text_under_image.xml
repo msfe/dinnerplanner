@@ -7,15 +7,16 @@
         android:id="@+id/dishImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ingridients" />
-        />        
-         <TextView
+        android:src="@drawable/ingridients"
+         />       
+         
+      <TextView
         android:id="@+id/imageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/dishImage"
         android:layout_centerHorizontal="true"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:text="TextView" />
 
 </RelativeLayout>
