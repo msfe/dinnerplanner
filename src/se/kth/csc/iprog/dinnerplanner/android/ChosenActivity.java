@@ -2,6 +2,7 @@ package se.kth.csc.iprog.dinnerplanner.android;
 
 import se.kth.csc.iprog.dinnerplanner.android.view.ChosenDishesView;
 import se.kth.csc.iprog.dinnerplanner.android.view.CreatedView;
+import se.kth.csc.iprog.dinnerplanner.android.view.TopMenuView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.app.Activity;
@@ -21,7 +22,7 @@ public class ChosenActivity extends Activity {
 		DinnerModel model = ((DinnerPlannerApplication) this.getApplication()).getModel();
 		//TODO Remove line below
 		if(debug){
-		model.addDishToMenu(model.getSelectedDish(Dish.MAIN));
+		model.addDishToMenu((Dish) model.getDishesOfType(Dish.MAIN).toArray()[0]);
 		model.setNumberOfGuests(2);
 		}
 		LayoutInflater inflater = getLayoutInflater();
@@ -36,6 +37,7 @@ public class ChosenActivity extends Activity {
 
 		// Creating the view class instance
 		 ChosenDishesView mainView = new ChosenDishesView(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
+		TopMenuView topView = new TopMenuView(findViewById(R.id.this_is_chooseMenu_topView), model);
 
 	}
 }
