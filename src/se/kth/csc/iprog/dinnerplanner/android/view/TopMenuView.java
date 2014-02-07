@@ -42,7 +42,9 @@ public class TopMenuView {
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 			}
+			
 		});
+		
 		
 
 		// Setup the rest of the view layout

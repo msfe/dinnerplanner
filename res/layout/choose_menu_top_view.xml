@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:paddingTop="10dp"
         android:text="@string/participants_" />
 
     <TextView
@@ -21,15 +23,22 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="75dp"
+        android:paddingTop="10dp"
         android:text="@string/total_cost_" />
 
     <Spinner
         android:id="@+id/numGuestsDropDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/participantsHeader"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/totalCostHeader"
-        android:layout_toRightOf="@+id/participantsHeader" />
+        android:layout_toRightOf="@+id/participantsHeader"
+        android:gravity="bottom"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/dynamicCost"
@@ -37,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="36dp" />
+        android:layout_marginRight="36dp"
+        android:paddingTop="10dp" />
 
 </RelativeLayout>
