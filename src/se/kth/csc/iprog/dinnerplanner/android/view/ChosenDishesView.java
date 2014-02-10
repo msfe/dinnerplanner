@@ -6,18 +6,24 @@ import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import se.kth.csc.iprog.dinnerplanner.model.Ingredient;
+import se.kth.csc.iprog.dinnerplanner.model.UpdateAble;
 import android.view.View;
 import android.widget.TextView;
 
-public class ChosenDishesView {
+public class ChosenDishesView implements UpdateAble {
+	private static final boolean testInstruction = false;
 	View view;
 	DinnerModel model;
 	
 	public ChosenDishesView(View view, DinnerModel model){
 		this.view = view;
 		this.model = model;
-		//fillIngredientsList(model, view);
+		fillIngredientsList(model, view);
+		fillPickedMenuImages(model, view);
+		if(testInstruction){
 		fillInstruction(model, view, Dish.MAIN);
+		}
+		
 	}
 	
 	public void fillIngredientsList(DinnerModel model, View view){
@@ -42,7 +48,7 @@ public class ChosenDishesView {
 	
 	// TODO: Add the images also
 	public void fillPickedMenuImages(DinnerModel model, View view){
-		Set<Dish> dishes = model.getDishes();
+		Set<Dish> dishes = model.getFullMenu();
 		TextView starter = (TextView) view.findViewById(R.id.starter).findViewById(R.id.imageText);
 		TextView main = (TextView) view.findViewById(R.id.main).findViewById(R.id.imageText);
 		TextView dessert = (TextView) view.findViewById(R.id.dessert).findViewById(R.id.imageText);
@@ -72,6 +78,11 @@ public class ChosenDishesView {
 		title.setText("Instructions");
 		subTitle.setText(model.getNumberOfGuests() + " port");
 		instructionsTextView.setText(selectedDish.getDescription());
+	}
+
+	@Override
+	public void update() {
+		//fillPickedMenuImages(model, view);
 	}
 	
 }
