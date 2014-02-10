@@ -27,5 +27,6 @@
         <item>7</item>
         <item>8</item>
     </string-array>
+        <string name="create">Create</string>
 
 </resources>
