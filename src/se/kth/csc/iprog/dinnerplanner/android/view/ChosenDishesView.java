@@ -7,7 +7,6 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import se.kth.csc.iprog.dinnerplanner.model.Ingredient;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ChosenDishesView {
@@ -17,8 +16,8 @@ public class ChosenDishesView {
 	public ChosenDishesView(View view, DinnerModel model){
 		this.view = view;
 		this.model = model;
-		fillIngredientsList(model, view);
-		
+		//fillIngredientsList(model, view);
+		fillInstruction(model, view, Dish.MAIN);
 	}
 	
 	public void fillIngredientsList(DinnerModel model, View view){
@@ -64,8 +63,15 @@ public class ChosenDishesView {
 	}
 	
 	// TODO: Add this function
-	public void fillInstruction(DinnerModel model, View view){
+	public void fillInstruction(DinnerModel model, View view, int dishType){
+		Dish selectedDish = model.getSelectedDish(dishType);
+		TextView instructionsTextView = (TextView) view.findViewById(R.id.chosenText);
+		TextView title = (TextView) view.findViewById(R.id.title);
+		TextView subTitle = (TextView) view.findViewById(R.id.subTitle);
 		
+		title.setText("Instructions");
+		subTitle.setText(model.getNumberOfGuests() + " port");
+		instructionsTextView.setText(selectedDish.getDescription());
 	}
 	
 }
