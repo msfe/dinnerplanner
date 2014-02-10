@@ -197,11 +197,11 @@ public class DinnerModel implements IDinnerModel {
 	@Override
 	public float getTotalMenuPrice() {
 		float cost = 0;
-		Set<Ingredient> ingredients = getAllIngredients();
-		for (Ingredient ingrident : ingredients) {
-			cost += ingrident.price * ingrident.quantity;
+		Set<Dish> menu = getFullMenu();
+		for (Dish dish : menu) {
+			cost += dish.getPrice();
 		}
-		return cost;
+		return cost*numGuests;
 	}
 	
 	public boolean addDishToMenu(Dish dish){		

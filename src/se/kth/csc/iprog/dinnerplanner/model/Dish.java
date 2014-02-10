@@ -79,5 +79,13 @@ public class Dish {
 		}
 		return false;
 	}
+	
+	public double getPrice(){
+		double cost = 0;
+		for(Ingredient ingredient: ingredients){
+			cost += ingredient.price * ingredient.quantity;
+		}
+		return cost;
+	}
 
 }
