@@ -23,7 +23,7 @@ public class ChosenActivity extends Activity {
 		//TODO Remove line below
 		if(debug){
 		model.addDishToMenu((Dish) model.getDishesOfType(Dish.MAIN).toArray()[0]);
-		model.setNumberOfGuests(2);
+		//model.setNumberOfGuests(2);
 		}
 		LayoutInflater inflater = getLayoutInflater();
 		getWindow().addContentView(
@@ -38,6 +38,13 @@ public class ChosenActivity extends Activity {
 		// Creating the view class instance
 		 ChosenDishesView mainView = new ChosenDishesView(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
 		TopMenuView topView = new TopMenuView(findViewById(R.id.this_is_chooseMenu_topView), model);
+		
+		
+		topView.update();
 
+		for(Dish dish : model.getFullMenu()){
+			System.out.println(dish.getName());
+		}
+		
 	}
 }

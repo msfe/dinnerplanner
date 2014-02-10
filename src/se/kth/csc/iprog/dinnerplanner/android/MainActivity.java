@@ -9,6 +9,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
+	
+	Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +23,15 @@ public class MainActivity extends Activity {
         
     	// Creating the view class instance
     	StartView startView = new StartView(findViewById(R.id.startViewID));	
+    	
+        next = (Button)this.findViewById(R.id.goToMenuButton);
+        this.next.setOnClickListener(new OnClickListener() {
+          //@Override
+          public void onClick(View v) {
+        	  Intent myIntent = new Intent(v.getContext(), MainMenuActivity.class);
+              startActivityForResult(myIntent, 0);
+          }
+        });
+    	
     }
 }

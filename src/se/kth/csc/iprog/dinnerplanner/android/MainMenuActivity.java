@@ -6,13 +6,18 @@ import se.kth.csc.iprog.dinnerplanner.android.view.TopMenuView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class MainMenuActivity extends Activity {
 
 	private static final boolean show_popup = false;
+	private Button create;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +46,24 @@ public class MainMenuActivity extends Activity {
 		// Creating the view class instance
 		MainMenuView mainView = new MainMenuView(
 				findViewById(R.id.this_is_chooseMenu_mainScreen), model);
-		TopMenuView topMenu = new TopMenuView(
+		TopMenuView topView = new TopMenuView(
 				findViewById(R.id.this_is_chooseMenu_topView), model);
+		
+		topView.update();
+		
 		if(show_popup){
 		PopUpMenuView popUpMenu = new PopUpMenuView(
 				findViewById(R.id.this_is_chooseMenu_chooseDish), (Dish) model
 						.getDishes().toArray()[0], model);
 		}
+		
+        create = (Button)this.findViewById(R.id.createMenuButton);
+        this.create.setOnClickListener(new OnClickListener() {
+          //@Override
+          public void onClick(View v) {
+        	  Intent myIntent = new Intent(v.getContext(), ChosenActivity.class);
+              startActivityForResult(myIntent, 0);
+          }
+        });
 	}
 }
