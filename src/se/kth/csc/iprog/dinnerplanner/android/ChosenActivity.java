@@ -36,11 +36,11 @@ public class ChosenActivity extends Activity {
 						ViewGroup.LayoutParams.MATCH_PARENT));
 
 		// Creating the view class instance
-		 ChosenDishesView mainView = new ChosenDishesView(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
+		 ChosenDishesView chosenDishView = new ChosenDishesView(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
 		TopMenuView topView = new TopMenuView(findViewById(R.id.this_is_chooseMenu_topView), model);
 		
 		//Creating the controllers
-		ChosenDishesController dishesController = new ChosenDishesController(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
+		ChosenDishesController dishesController = new ChosenDishesController(chosenDishView, model);
 		
 		
 	}
