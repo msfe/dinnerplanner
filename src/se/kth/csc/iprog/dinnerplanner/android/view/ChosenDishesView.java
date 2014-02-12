@@ -109,6 +109,7 @@ public class ChosenDishesView implements Observer {
 			dessertText.setText("No dish");
 		} else {
 			int id = view.getResources().getIdentifier(dish.getImage().split("\\.")[0], "drawable",this.view.getContext().getPackageName());
+			System.out.println(id);
 			dessertButton.setImageResource(id);
 			dessertText.setText(dish.getName());
 		}
