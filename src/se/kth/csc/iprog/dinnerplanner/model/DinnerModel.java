@@ -137,7 +137,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
 
 	/**
 	 * @param get
-	 *            first dish of certain type(1 = starter, 2 = main, 3 = desert)
+	 *            picked dish of certain type(1 = starter, 2 = main, 3 = desert)
 	 * @return returns dish if any is picked, otherwise will return null.
 	 */
 	@Override
