@@ -7,6 +7,7 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.view.View;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -28,6 +29,10 @@ public class MainMenuView {
 
         for(Dish starter : starters){
 
+            ImageButton im = new ImageButton(view.getContext());
+            im.setImageResource(R.id.dishImage);
+            ll.addView(im);
+            
             TextView tv = new TextView(view.getContext());
             tv.setPadding(20, 10, 20, 10);
             tv.setTextSize(30);
@@ -42,6 +47,10 @@ public class MainMenuView {
 
         for(Dish main : mains){
 
+            ImageButton im2 = new ImageButton(view.getContext());
+            im2.setImageResource(R.id.dishImage);
+            ll2.addView(im2);
+            
             TextView tv2 = new TextView(view.getContext());
             tv2.setPadding(20, 10, 20, 10);
             tv2.setTextSize(30);
@@ -55,7 +64,11 @@ public class MainMenuView {
         Set<Dish> desserts = model.getDishesOfType(Dish.DESERT);
         
         for(Dish dessert : desserts){
-
+            
+            ImageButton im3 = new ImageButton(view.getContext());
+            im3.setImageResource(R.id.dishImage);
+            ll3.addView(im3);
+            
             TextView tv3 = new TextView(view.getContext());
             tv3.setPadding(20, 10, 20, 10);
             tv3.setTextSize(30);
