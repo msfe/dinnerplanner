@@ -74,7 +74,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
 		dish2.addIngredient(dish2ing11);
 		allDishes.add(dish2);
 
-		Dish dish3 = new Dish("Boiled eggs", Dish.STARTER, "egg.jpg",
+		Dish dish3 = new Dish("Boiled eggs", Dish.STARTER, "chocolate.png",
 				"Boil and eat");
 		dish3.addIngredient(dish1ing1);
 		allDishes.add(dish3);
