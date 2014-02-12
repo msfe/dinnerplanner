@@ -1,5 +1,8 @@
 package se.kth.csc.iprog.dinnerplanner.android.view;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import android.view.View;
@@ -9,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class TopMenuView {
+public class TopMenuView implements Observer {
 
 	View view;
 	DinnerModel model;
@@ -19,6 +22,7 @@ public class TopMenuView {
 		// store in the class the reference to the Android View
 		this.view = view;
 		this.model = model;
+		model.addObserver(this);
 
 		TextView cost = (TextView) view.findViewById(R.id.dynamicCost);
 		cost.setText(String.valueOf(model.getTotalMenuPrice()) + " kr");
@@ -53,7 +57,17 @@ public class TopMenuView {
 		// Setup the rest of the view layout
 	}
 
-	public void update() {
+	/**
+	 * This method is called by the DinnerModel, it should performe
+	 * update to the topbar booth if a dish is updated or if the number
+	 * of guests is changed.
+	 */
+	@Override
+	public void update(Observable observable, Object data) {
+		updateVisuals();		
+	}
+	
+	private void updateVisuals(){
 		Spinner participants = (Spinner) view
 				.findViewById(R.id.numGuestsDropDown);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -64,5 +78,7 @@ public class TopMenuView {
 		TextView cost = (TextView) view.findViewById(R.id.dynamicCost);
 		cost.setText(String.valueOf(model.getTotalMenuPrice()) + " kr");
 	}
+	
+	
 
 }
