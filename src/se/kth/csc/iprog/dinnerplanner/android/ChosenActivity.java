@@ -1,5 +1,6 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
+import se.kth.csc.iprog.dinnerplanner.android.view.ChosenDishesController;
 import se.kth.csc.iprog.dinnerplanner.android.view.ChosenDishesView;
 import se.kth.csc.iprog.dinnerplanner.android.view.TopMenuView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
@@ -37,6 +38,9 @@ public class ChosenActivity extends Activity {
 		// Creating the view class instance
 		 ChosenDishesView mainView = new ChosenDishesView(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
 		TopMenuView topView = new TopMenuView(findViewById(R.id.this_is_chooseMenu_topView), model);
+		
+		//Creating the controllers
+		ChosenDishesController dishesController = new ChosenDishesController(findViewById(R.id.this_is_showInfoOnCourses_ingridientsScreen), model);
 		
 		
 	}
