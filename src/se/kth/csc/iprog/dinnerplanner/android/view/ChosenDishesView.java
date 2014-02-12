@@ -22,6 +22,10 @@ public class ChosenDishesView implements Observer {
 	ImageButton starterButton;
 	ImageButton mainDishButton;
 	ImageButton dessertButton;
+	TextView starterText;
+	TextView mainText;
+	TextView dessertText;
+	TextView ingredientsText;
 
 	public ChosenDishesView(View view, DinnerModel model) {
 		this.view = view;
@@ -29,13 +33,21 @@ public class ChosenDishesView implements Observer {
 
 		instructionsButton = (ImageButton) view.findViewById(
 				R.id.showIngredients).findViewById(R.id.dishImage);
-
 		starterButton = (ImageButton) view.findViewById(R.id.starter)
 				.findViewById(R.id.dishImage);
 		mainDishButton = (ImageButton) view.findViewById(R.id.main)
 				.findViewById(R.id.dishImage);
 		dessertButton = (ImageButton) view.findViewById(R.id.dessert)
 				.findViewById(R.id.dishImage);
+
+		starterText = (TextView) view.findViewById(R.id.starter).findViewById(
+				R.id.imageText);
+		mainText = (TextView) view.findViewById(R.id.main).findViewById(
+				R.id.imageText);
+		dessertText = (TextView) view.findViewById(R.id.dessert).findViewById(
+				R.id.imageText);
+		ingredientsText = (TextView) view.findViewById(R.id.showIngredients)
+				.findViewById(R.id.imageText);
 
 		model.addObserver(this);
 		instruction = false;
@@ -68,26 +80,37 @@ public class ChosenDishesView implements Observer {
 
 	// TODO: Add the images also
 	public void fillPickedMenuImages() {
-		Set<Dish> dishes = model.getFullMenu();
-		TextView starter = (TextView) view.findViewById(R.id.starter)
-				.findViewById(R.id.imageText);
-		TextView main = (TextView) view.findViewById(R.id.main).findViewById(
-				R.id.imageText);
-		TextView dessert = (TextView) view.findViewById(R.id.dessert)
-				.findViewById(R.id.imageText);
 
-		for (Dish dish : dishes) {
-			switch (dish.getType()) {
-			case (Dish.STARTER):
-				starter.setText(dish.getName());
-				break;
-			case (Dish.MAIN):
-				main.setText(dish.getName());
-				break;
-			case (Dish.DESERT):
-				dessert.setText(dish.getName());
-				break;
-			}
+		ingredientsText.setText("Ingredients");
+
+		Dish dish = model.getSelectedDish(Dish.STARTER);
+		if (dish == null) {
+			starterButton.setImageDrawable(view.getResources().getDrawable(R.drawable.red_screen));
+			starterText.setText("No dish");
+		} else {
+			int id = view.getResources().getIdentifier(dish.getImage().split("\\.")[0], "drawable",this.view.getContext().getPackageName());
+			starterButton.setImageResource(id);
+			starterText.setText(dish.getName());
+		}
+
+		dish = model.getSelectedDish(Dish.MAIN);
+		if (dish == null) {
+			mainDishButton.setImageDrawable(view.getResources().getDrawable(R.drawable.red_screen));
+			mainText.setText("No dish");
+		} else {
+			int id = view.getResources().getIdentifier(dish.getImage().split("\\.")[0], "drawable",this.view.getContext().getPackageName());
+			mainDishButton.setImageResource(id);
+			mainText.setText(dish.getName());
+		}
+
+		dish = model.getSelectedDish(Dish.DESERT);
+		if (dish == null) {
+			dessertButton.setImageDrawable(view.getResources().getDrawable(R.drawable.red_screen));
+			dessertText.setText("No dish");
+		} else {
+			int id = view.getResources().getIdentifier(dish.getImage().split("\\.")[0], "drawable",this.view.getContext().getPackageName());
+			dessertButton.setImageResource(id);
+			dessertText.setText(dish.getName());
 		}
 	}
 
