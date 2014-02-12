@@ -49,8 +49,6 @@ public class MainMenuActivity extends Activity {
 		TopMenuView topView = new TopMenuView(
 				findViewById(R.id.this_is_chooseMenu_topView), model);
 		
-		topView.update();
-		
 		if(show_popup){
 		PopUpMenuView popUpMenu = new PopUpMenuView(
 				findViewById(R.id.this_is_chooseMenu_chooseDish), (Dish) model
