@@ -37,6 +37,8 @@ public class ChosenDishesView implements Observer {
 		dessertButton = (ImageButton) view.findViewById(R.id.dessert)
 				.findViewById(R.id.dishImage);
 
+		TextView ingredientsText = (TextView)view.findViewById(R.id.showIngredients).findViewById(R.id.imageText);
+		ingredientsText.setText("Ingredients");
 		model.addObserver(this);
 		instruction = false;
 		dishType = 0;

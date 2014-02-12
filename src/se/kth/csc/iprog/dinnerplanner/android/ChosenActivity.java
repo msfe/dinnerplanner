@@ -23,6 +23,8 @@ public class ChosenActivity extends Activity {
 		//TODO Remove line below
 		if(debug){
 		model.addDishToMenu((Dish) model.getDishesOfType(Dish.MAIN).toArray()[0]);
+		model.addDishToMenu((Dish) model.getDishesOfType(Dish.STARTER).toArray()[0]);
+		model.addDishToMenu((Dish) model.getDishesOfType(Dish.DESERT).toArray()[0]);
 		model.setNumberOfGuests(2);
 		}
 		LayoutInflater inflater = getLayoutInflater();

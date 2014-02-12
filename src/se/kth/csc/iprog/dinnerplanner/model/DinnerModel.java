@@ -78,6 +78,12 @@ public class DinnerModel extends Observable implements IDinnerModel {
 				"Boil and eat");
 		dish3.addIngredient(dish1ing1);
 		allDishes.add(dish3);
+		
+		Dish dish4 = new Dish("Chocoloate", Dish.DESERT, "chocoloate.jpg",
+				"Eat it! NOW!");
+		Ingredient dish4ing1 = new Ingredient("Chocolate", 1, "kg", 35);
+		dish4.addIngredient(dish4ing1);
+		allDishes.add(dish4);
 
 	}
 
