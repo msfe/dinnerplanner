@@ -1,7 +1,7 @@
 package se.kth.csc.iprog.dinnerplanner.model;
 
-import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Observable;
 import java.util.Set;
 
@@ -73,11 +73,8 @@ public class DinnerModel extends Observable implements IDinnerModel {
 		dish2.addIngredient(dish2ing10);
 		dish2.addIngredient(dish2ing11);
 		allDishes.add(dish2);
-		
-		Dish dish3 = new Dish(
-				"Boiled eggs",
-				Dish.STARTER,
-				"egg.jpg",
+
+		Dish dish3 = new Dish("Boiled eggs", Dish.STARTER, "egg.jpg",
 				"Boil and eat");
 		dish3.addIngredient(dish1ing1);
 		allDishes.add(dish3);
@@ -140,8 +137,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
 
 	/**
 	 * @param get
-	 *            selected dish of certain type(1 = starter, 2 = main, 3 =
-	 *            desert)
+	 *            first dish of certain type(1 = starter, 2 = main, 3 = desert)
 	 * @return returns dish if any is picked, otherwise will return null.
 	 */
 	@Override
@@ -167,31 +163,38 @@ public class DinnerModel extends Observable implements IDinnerModel {
 	 */
 	@Override
 	public Set<Ingredient> getAllIngredients() {
-		HashSet<Ingredient> returnListIngredients = new HashSet<Ingredient>();
-		ArrayList<Ingredient> existingIngredients = new ArrayList<Ingredient>();
+		Hashtable<Ingredient, Double> workingTableIngredients = new Hashtable<Ingredient, Double>();
 		for (Dish dish : pickedDishes) {
-			if(dish==null){
+			if (dish == null) {
 				continue;
 			}
 			Set<Ingredient> dishIngredients = dish.getIngredients();
+
+			// Make sure that the correct quantitys will be returned.
 			for (Ingredient ingredient : dishIngredients) {
-				if (returnListIngredients.contains(ingredient)) {
-					//The set will overwrite and quantity info will be lost
-					existingIngredients.add(ingredient);
+				if (workingTableIngredients.contains(ingredient)) {
+					double currentQuantity = workingTableIngredients
+							.get(ingredient);
+					currentQuantity += ingredient.quantity;
+					workingTableIngredients.put(ingredient, currentQuantity);
 				} else {
-					returnListIngredients.add(ingredient);
+					workingTableIngredients
+							.put(ingredient, ingredient.quantity);
 				}
 			}
 		}
-		for (Ingredient ingredient : returnListIngredients) {
-			while(existingIngredients.contains(ingredient)) {
-				int index = existingIngredients
-						.indexOf(ingredient);
-				ingredient.quantity += existingIngredients.get(index).quantity;
-				existingIngredients.remove(index);
-			}
+
+		// Transform data into a HashSet which is specified by the interface
+		// New ingredients is created so that the original data from the course
+		// wont change
+		HashSet<Ingredient> returnList = new HashSet<Ingredient>();
+		for (Ingredient ingredient : workingTableIngredients.keySet()) {
+			double currentQuantity = workingTableIngredients.get(ingredient);
+			returnList.add(new Ingredient(ingredient.getName(),
+					currentQuantity, ingredient.getUnit(), ingredient
+							.getPrice()));
 		}
-		return returnListIngredients;
+		return returnList;
 	}
 
 	/**
@@ -204,11 +207,11 @@ public class DinnerModel extends Observable implements IDinnerModel {
 		for (Dish dish : menu) {
 			cost += dish.getPrice();
 		}
-		return cost*numGuests;
+		return cost * numGuests;
 	}
-	
-	public boolean addDishToMenu(Dish dish){		
-		if(pickedDishes.contains(dish)){
+
+	public boolean addDishToMenu(Dish dish) {
+		if (pickedDishes.contains(dish)) {
 			return false;
 		}
 		pickedDishes.add(dish);
@@ -216,9 +219,9 @@ public class DinnerModel extends Observable implements IDinnerModel {
 		notifyObservers(dish);
 		return true;
 	}
-	
-	public boolean removeDishFromMenu(Dish dish){		
-		if(pickedDishes.contains(dish)){
+
+	public boolean removeDishFromMenu(Dish dish) {
+		if (pickedDishes.contains(dish)) {
 			pickedDishes.remove(dish);
 			setChanged();
 			notifyObservers(dish);
