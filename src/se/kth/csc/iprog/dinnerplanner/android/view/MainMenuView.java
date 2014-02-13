@@ -39,8 +39,8 @@ public class MainMenuView {
             if(i == 0) {
                
                boiledEggsButton = new ImageButton(view.getContext());
-               //boiledEggsButton.setPadding(50, 10, 50, 10);
-               boiledEggsButton.setImageResource(R.drawable.french_toast);
+               boiledEggsButton.setPadding(5, 5, 5, 5);
+               boiledEggsButton.setImageResource(R.drawable.boiled_eggs);
                ll.addView(boiledEggsButton);
                
 //               TextView tv = new TextView(view.getContext());
@@ -52,8 +52,8 @@ public class MainMenuView {
             }
             else {
                 frenchToastButton = new ImageButton(view.getContext());
-                //frenchToastButton.setPadding(50, 10, 50, 10);
-                frenchToastButton.setImageResource(R.drawable.boiled_eggs);
+                frenchToastButton.setPadding(5, 5, 5, 5);
+                frenchToastButton.setImageResource(R.drawable.french_toast);
                 ll.addView(frenchToastButton);
                 
 //                TextView tv = new TextView(view.getContext());
@@ -71,6 +71,7 @@ public class MainMenuView {
         for(Dish main : mains){
 
             meatballsButton = new ImageButton(view.getContext());
+            meatballsButton.setPadding(5, 5, 5, 5);
             meatballsButton.setImageResource(R.drawable.meatballs);
             ll2.addView(meatballsButton);
             
@@ -89,6 +90,7 @@ public class MainMenuView {
         for(Dish dessert : desserts){
             
             chocolateButton = new ImageButton(view.getContext());
+            chocolateButton.setPadding(5, 5, 5, 5);
             chocolateButton.setImageResource(R.drawable.chocolate);
             ll3.addView(chocolateButton);
             
