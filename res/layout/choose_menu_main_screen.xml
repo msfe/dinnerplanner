@@ -89,8 +89,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/dessertHeader"
-        android:layout_marginBottom="42dp" >
+        android:layout_below="@id/dessertHeader" 
+        android:layout_marginBottom="100dp" >
 
         <LinearLayout
             android:id="@+id/dessertsScrollLinear"

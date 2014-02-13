@@ -5,7 +5,9 @@ import java.util.Set;
 import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -16,6 +18,11 @@ public class MainMenuView {
 
     View view;
     DinnerModel model;
+    
+    ImageButton boiledEggsButton;
+    ImageButton frenchToastButton;
+    ImageButton meatballsButton;
+    ImageButton chocolateButton;
 
     public MainMenuView(View view, DinnerModel model) {
 
@@ -27,18 +34,34 @@ public class MainMenuView {
         LinearLayout ll = (LinearLayout) view.findViewById(R.id.startersScrollLinear);
         Set<Dish> starters = model.getDishesOfType(Dish.STARTER);
 
+        int i = 0;
         for(Dish starter : starters){
-
-            ImageButton im = new ImageButton(view.getContext());
-            im.setImageResource(R.id.dishImage);
-            ll.addView(im);
-            
-            TextView tv = new TextView(view.getContext());
-            tv.setPadding(20, 10, 20, 10);
-            tv.setTextSize(30);
-            tv.setText(starter.getName());
-            ll.addView(tv);
-
+            if(i == 0) {
+               
+               boiledEggsButton = new ImageButton(view.getContext());
+               //boiledEggsButton.setPadding(50, 10, 50, 10);
+               boiledEggsButton.setImageResource(R.drawable.french_toast);
+               ll.addView(boiledEggsButton);
+               
+//               TextView tv = new TextView(view.getContext());
+//               tv.setPadding(20, 10, 20, 10);
+//               tv.setTextSize(10);
+//               tv.setText(starter.getName());
+//               ll.addView(tv);
+               i++;
+            }
+            else {
+                frenchToastButton = new ImageButton(view.getContext());
+                //frenchToastButton.setPadding(50, 10, 50, 10);
+                frenchToastButton.setImageResource(R.drawable.boiled_eggs);
+                ll.addView(frenchToastButton);
+                
+//                TextView tv = new TextView(view.getContext());
+//                tv.setPadding(50, 65, 50, 10);
+//                tv.setTextSize(10);
+//                tv.setText(starter.getName());
+//                ll.addView(tv);
+            }
         }
 
         //Add Main Courses to view
@@ -47,15 +70,15 @@ public class MainMenuView {
 
         for(Dish main : mains){
 
-            ImageButton im2 = new ImageButton(view.getContext());
-            im2.setImageResource(R.id.dishImage);
-            ll2.addView(im2);
+            meatballsButton = new ImageButton(view.getContext());
+            meatballsButton.setImageResource(R.drawable.meatballs);
+            ll2.addView(meatballsButton);
             
-            TextView tv2 = new TextView(view.getContext());
-            tv2.setPadding(20, 10, 20, 10);
-            tv2.setTextSize(30);
-            tv2.setText(main.getName());
-            ll2.addView(tv2);
+//            TextView tv2 = new TextView(view.getContext());
+//            tv2.setPadding(20, 10, 20, 10);
+//            tv2.setTextSize(30);
+//            tv2.setText(main.getName());
+//            ll2.addView(tv2);
 
         }
 
@@ -65,24 +88,32 @@ public class MainMenuView {
         
         for(Dish dessert : desserts){
             
-            ImageButton im3 = new ImageButton(view.getContext());
-            im3.setImageResource(R.id.dishImage);
-            ll3.addView(im3);
+            chocolateButton = new ImageButton(view.getContext());
+            chocolateButton.setImageResource(R.drawable.chocolate);
+            ll3.addView(chocolateButton);
             
-            TextView tv3 = new TextView(view.getContext());
-            tv3.setPadding(20, 10, 20, 10);
-            tv3.setTextSize(30);
-            tv3.setText(dessert.getName());
-            ll3.addView(tv3);
+//            TextView tv3 = new TextView(view.getContext());
+//            tv3.setPadding(20, 10, 20, 10);
+//            tv3.setTextSize(30);
+//            tv3.setText(dessert.getName());
+//            ll3.addView(tv3);
 
         }
-
-
-
-        //		TextView mainMenu = (TextView) view.findViewById(R.id.this_is_chooseMenu_mainScreen);
-        //example.setText("Hello world");
-
-        // Setup the rest of the view layout
+    }
+    
+    public void showPopUp(int choice) {
+        if(choice == 0) {
+            
+        }
+        else if(choice == 1) {
+            
+        }
+        else if(choice == 2) {
+            
+        }
+        else if(choice == 3) {
+            
+        }
     }
 
 }
