@@ -35,7 +35,7 @@
         android:text="@string/starter"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <HorizontalScrollView
+  <HorizontalScrollView
         android:id="@+id/starterScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +49,7 @@
             android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
+    
 
     <TextView
         android:id="@+id/mainCourse"
@@ -80,7 +81,6 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/starterHeadLine"
         android:layout_below="@id/mainCourseScrollView"
-        android:layout_marginBottom="67dp"
         android:text="@string/dessert"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/dessertHeader" 
-        android:layout_marginBottom="100dp" >
+        >
 
         <LinearLayout
             android:id="@+id/dessertsScrollLinear"
