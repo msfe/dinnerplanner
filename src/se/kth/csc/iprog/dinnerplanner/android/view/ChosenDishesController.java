@@ -25,7 +25,6 @@ public class ChosenDishesController implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		System.out.println(v.getId());
 		if(v == view.instructionsButton){
 			view.fillIngredientsList();
 		}

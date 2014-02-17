@@ -1,23 +1,27 @@
 package se.kth.csc.iprog.dinnerplanner.android.view;
 
-import java.util.Set;
-
 import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
-public class PopUpMenuView {
+public class PopUpMenuView{
 
-    View view;
-    Dish dish;
-    DinnerModel model;
+    private View view;
+    private Dish dish;
+    private DinnerModel model;
+    
+    Button choose;
+    Button close;
 
     public PopUpMenuView(View view, Dish dish, DinnerModel model) {
+    	
+    	choose = (Button) view.findViewById(
+				R.id.chooseDish);
+    	close = (Button) view.findViewById(R.id.close);
 
         // store in the class the reference to the Android View
         this.view = view;
@@ -36,5 +40,9 @@ public class PopUpMenuView {
         TextView dishCostPerPerson = (TextView) view.findViewById(R.id.dishCostPerPerson);  
         dishCostPerPerson.setText("(" + dish.costOfDish() + "kr / Person)");
     }
+
+	public Dish getDish() {
+		return dish;
+	}
 
 }

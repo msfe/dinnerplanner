@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 public class ChosenActivity extends Activity {
 
-	private static final boolean debug = true;
+	private static final boolean debug = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

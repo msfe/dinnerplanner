@@ -95,7 +95,7 @@ public class ChosenDishesView implements Observer {
 
 		dish = model.getSelectedDish(Dish.MAIN);
 		if (dish == null) {
-			mainDishButton.setImageDrawable(view.getResources().getDrawable(R.drawable.red_screen));
+//			mainDishButton.setImageDrawable(view.getResources().getDrawable(R.drawable.red_screen));
 			mainText.setText("No dish");
 		} else {
 			int id = view.getResources().getIdentifier(dish.getImage().split("\\.")[0], "drawable",this.view.getContext().getPackageName());
