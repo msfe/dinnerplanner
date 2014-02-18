@@ -9,6 +9,7 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import se.kth.csc.iprog.dinnerplanner.model.Ingredient;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -48,6 +49,7 @@ public class ChosenDishesView implements Observer {
 				R.id.imageText);
 		ingredientsText = (TextView) view.findViewById(R.id.showIngredients)
 				.findViewById(R.id.imageText);
+		
 
 		model.addObserver(this);
 		instruction = false;

@@ -28,5 +28,6 @@
         <item>8</item>
     </string-array>
         <string name="create">Create</string>
+        <string name="clear">Clear</string>
 
 </resources>

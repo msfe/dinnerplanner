@@ -1,16 +1,21 @@
 package se.kth.csc.iprog.dinnerplanner.android.view;
 
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Set;
 
 import se.kth.csc.iprog.dinnerplanner.android.R;
+import se.kth.csc.iprog.dinnerplanner.android.classes.DishImageButton;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
-import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
 
-public class MainMenuView {
+public class MainMenuView implements Observer {
 
 	View view;
 	DinnerModel model;
@@ -18,18 +23,21 @@ public class MainMenuView {
 	LinearLayout starterList;
 	LinearLayout mainList;
 	LinearLayout desertList;
+	Button clearButton;
 
 	public MainMenuView(View view, DinnerModel model) {
 
 		// store in the class the reference to the Android View
 		this.view = view;
 		this.model = model;
+		model.addObserver(this);
 
 		starterList = (LinearLayout) view
 				.findViewById(R.id.startersScrollLinear);
 		mainList = (LinearLayout) view.findViewById(R.id.mainsScrollLinear);
 		desertList = (LinearLayout) view
 				.findViewById(R.id.dessertsScrollLinear);
+		clearButton = (Button) view.findViewById(R.id.clearButton);
 
 		// Add starter
 		Set<Dish> starters = model.getDishesOfType(Dish.STARTER);
@@ -51,7 +59,8 @@ public class MainMenuView {
 
 		TextUnderImageView txtUImageView = new TextUnderImageView(
 				view.getContext());
-		txtUImageView.addDishImageButton(dish, txtUImageView.convertDpToPx(view.getContext(), 100),
+		txtUImageView.addDishImageButton(dish,
+				txtUImageView.convertDpToPx(view.getContext(), 100),
 				txtUImageView.convertDpToPx(view.getContext(), 100));
 		txtUImageView.addTextView(dish.getName());
 		LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
@@ -61,5 +70,51 @@ public class MainMenuView {
 		txtUImageView.setLayoutParams(param);
 		linearLayout.addView(txtUImageView);
 	}
+
+	/** TODO: This breaks clear....
+	public void setBold(Dish dish) {
+		// Ugly ass code, tired...
+		Set<Dish> selected = model.getFullMenu();
+		LinearLayout list = null;
+		for (Dish selectedDish : selected) {
+			switch (dish.getType()) {
+			case (Dish.STARTER):
+				list = starterList;
+				break;
+			case (Dish.MAIN):
+				list = mainList;
+				break;
+			case (Dish.DESERT):
+				list = desertList;
+				break;
+			}
+		}
+
+		for (int i = 0; i < list.getChildCount(); i++) {
+			if (!((TextUnderImageView) list.getChildAt(i) instanceof TextUnderImageView)) {
+				continue;
+			}
+			TextUnderImageView txtImg = (TextUnderImageView) list.getChildAt(i);
+			DishImageButton img = txtImg.getDishImageButton();
+			TextView txt = txtImg.getTextView();
+			if (dish.equals(img.getDish())) {
+				txt.setTypeface(null, Typeface.BOLD);
+			} else {
+				txt.setTypeface(null, Typeface.NORMAL);
+			}
+
+		}
+	}
+**/
+	@Override
+	public void update(Observable observable, Object data) {
+		/**
+		if (data instanceof Dish) {
+			setBold(((Dish) data));
+		}
+		**/
+
+	}
+	
 
 }

@@ -1,5 +1,7 @@
 package se.kth.csc.iprog.dinnerplanner.android.view;
 
+import java.util.Set;
+
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.view.View;
@@ -19,6 +21,7 @@ public class ChosenDishesController implements OnClickListener {
 		view.starterButton.setOnClickListener(this);
 		view.mainDishButton.setOnClickListener(this);
 		view.dessertButton.setOnClickListener(this);
+		
 		
 	}
 

@@ -29,7 +29,7 @@ public class TextUnderImageView extends RelativeLayout{
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				imgHeight, imgWidth);
 		
-		DishImageButton imageButton = new DishImageButton(context,
+		imageButton = new DishImageButton(context,
 				dish);
 		int imgId = context.getResources().getIdentifier(
 				dish.getImage().split("\\.")[0], "drawable",
@@ -46,7 +46,7 @@ public class TextUnderImageView extends RelativeLayout{
 		RelativeLayout.LayoutParams relParams =  new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		
-		TextView textView = new TextView(context);
+		textView = new TextView(context);
 		textView.setText(text);
 		
 		relParams.addRule(RelativeLayout.BELOW, imageId);
@@ -62,6 +62,9 @@ public class TextUnderImageView extends RelativeLayout{
 		return imageButton;
 	}
 	
+	public int getImageId(){
+		return imageId;
+	}
 	
 	public int convertDpToPx(Context context, int dp) {
 		float scale = context.getResources().getDisplayMetrics().density;

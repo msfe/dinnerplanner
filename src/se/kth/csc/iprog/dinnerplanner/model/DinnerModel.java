@@ -235,5 +235,4 @@ public class DinnerModel extends Observable implements IDinnerModel {
 		}
 		return false;
 	}
-
 }

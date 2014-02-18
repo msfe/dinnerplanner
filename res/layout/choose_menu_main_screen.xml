@@ -109,4 +109,16 @@
         android:background="#ff0000"        
         android:text="@string/create" />
 
+    <Button
+        android:id="@+id/clearButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chooseMenuHeader"
+        android:layout_alignBottom="@+id/chooseMenuHeader"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/chooseMenuHeader"
+        android:background="#dddddd"      
+        android:text="@string/clear" />
+
 </RelativeLayout>

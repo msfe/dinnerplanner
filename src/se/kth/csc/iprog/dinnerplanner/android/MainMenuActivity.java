@@ -46,7 +46,7 @@ public class MainMenuActivity extends Activity {
 		MainMenuView mainView = new MainMenuView(
 				findViewById(R.id.this_is_chooseMenu_mainScreen), model);
 		MainMenuController mainControler = new MainMenuController(mainView,
-				this);
+				this, model);
 		TopMenuView topView = new TopMenuView(
 				findViewById(R.id.this_is_chooseMenu_topView), model);
 
