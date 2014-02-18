@@ -5,7 +5,7 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.view.View;
 import android.widget.Button;
-import android.widget.PopupWindow;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class PopUpMenuView{
@@ -35,6 +35,13 @@ public class PopUpMenuView{
         //set total cost of dish (according to the number of participants)
         TextView dishCost = (TextView) view.findViewById(R.id.dishCost);
         dishCost.setText("" + dish.costOfDish()*model.getNumberOfGuests() + "kr");
+        
+        //Set the image for the dish
+        ImageView image = (ImageView) view.findViewById(R.id.show_the_dish);
+        int id = view.getResources().getIdentifier(
+				dish.getImage().split("\\.")[0], "drawable",
+				this.view.getContext().getPackageName());
+		image.setImageResource(id);
         
         //set cost of dish (w. one participant)
         TextView dishCostPerPerson = (TextView) view.findViewById(R.id.dishCostPerPerson);  

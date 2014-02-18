@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/staticCost"
         android:layout_toRightOf="@id/staticCost"
+        android:layout_alignRight="@id/chooseDishPopupFrame"
         android:text="dishCost"
         tools:ignore="HardcodedText" />
 
@@ -83,5 +84,16 @@
         android:layout_alignBottom="@+id/nameOfDish"
         android:layout_alignRight="@+id/chooseDishPopupFrame"
         android:text="@string/x" />
+
+    <ImageView
+        android:id="@+id/show_the_dish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/dishCostPerPerson"
+        android:layout_alignLeft="@+id/chooseDishPopupFrame"
+        android:layout_alignTop="@+id/staticCost"
+        android:layout_marginLeft="33dp"
+        android:layout_toLeftOf="@+id/chooseDish"
+        android:src="@drawable/bakedbrie" />
 
 </RelativeLayout>
