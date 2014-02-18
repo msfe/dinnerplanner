@@ -6,6 +6,7 @@ import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 public class MainMenuController implements OnClickListener {
 	MainMenuView view;
@@ -15,24 +16,27 @@ public class MainMenuController implements OnClickListener {
 		this.view = view;
 		this.activity = acitvity;
 		for (int i = 0; i < view.starterList.getChildCount(); i++) {
-			if (!(view.starterList.getChildAt(i) instanceof ImageButton)) {
+			if (! (((RelativeLayout)view.starterList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
 				continue;
 			}
-			ImageButton button = (ImageButton) view.starterList.getChildAt(i);
+			
+			ImageButton button = (ImageButton) ((RelativeLayout) view.starterList.getChildAt(i)).getChildAt(0);
 			button.setOnClickListener(this);
 		}
 		for (int i = 0; i < view.mainList.getChildCount(); i++) {
-			if (!(view.mainList.getChildAt(i) instanceof ImageButton)) {
+			if (! (((RelativeLayout)view.mainList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
 				continue;
 			}
-			ImageButton button = (ImageButton) view.mainList.getChildAt(i);
+			
+			ImageButton button = (ImageButton) ((RelativeLayout) view.mainList.getChildAt(i)).getChildAt(0);
 			button.setOnClickListener(this);
 		}
 		for (int i = 0; i < view.desertList.getChildCount(); i++) {
-			if (!(view.desertList.getChildAt(i) instanceof ImageButton)) {
+			if (! (((RelativeLayout)view.desertList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
 				continue;
 			}
-			ImageButton button = (ImageButton) view.desertList.getChildAt(i);
+			
+			ImageButton button = (ImageButton) ((RelativeLayout) view.desertList.getChildAt(i)).getChildAt(0);
 			button.setOnClickListener(this);
 		}
 	}
