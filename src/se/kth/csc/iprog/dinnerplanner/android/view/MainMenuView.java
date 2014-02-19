@@ -71,50 +71,38 @@ public class MainMenuView implements Observer {
 		linearLayout.addView(txtUImageView);
 	}
 
-	/** TODO: This breaks clear....
 	public void setBold(Dish dish) {
-		// Ugly ass code, tired...
-		Set<Dish> selected = model.getFullMenu();
 		LinearLayout list = null;
-		for (Dish selectedDish : selected) {
-			switch (dish.getType()) {
-			case (Dish.STARTER):
-				list = starterList;
-				break;
-			case (Dish.MAIN):
-				list = mainList;
-				break;
-			case (Dish.DESERT):
-				list = desertList;
-				break;
-			}
+		if (dish.getType() == Dish.STARTER) {
+			list = starterList;
+		} else if (dish.getType() == Dish.MAIN) {
+			list = mainList;
+		} else { // Dish == DESERT
+			list = desertList;
 		}
 
+		Set<Dish> fullMenu = model.getFullMenu();
 		for (int i = 0; i < list.getChildCount(); i++) {
-			if (!((TextUnderImageView) list.getChildAt(i) instanceof TextUnderImageView)) {
+			if (!(list.getChildAt(i) instanceof TextUnderImageView)) {
 				continue;
 			}
 			TextUnderImageView txtImg = (TextUnderImageView) list.getChildAt(i);
 			DishImageButton img = txtImg.getDishImageButton();
 			TextView txt = txtImg.getTextView();
-			if (dish.equals(img.getDish())) {
+			if (dish.equals(img.getDish()) && fullMenu.contains(dish)) {
 				txt.setTypeface(null, Typeface.BOLD);
 			} else {
 				txt.setTypeface(null, Typeface.NORMAL);
 			}
-
 		}
 	}
-**/
+
 	@Override
 	public void update(Observable observable, Object data) {
-		/**
+		System.out.println(data);
 		if (data instanceof Dish) {
 			setBold(((Dish) data));
 		}
-		**/
-
 	}
-	
 
 }

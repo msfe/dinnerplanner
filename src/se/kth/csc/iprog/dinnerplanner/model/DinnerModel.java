@@ -149,7 +149,7 @@ public class DinnerModel extends Observable implements IDinnerModel {
 	@Override
 	public Dish getSelectedDish(int type) {
 		for (Dish dish : pickedDishes) {
-			if (dish.type == type) {
+			if (dish.getType() == type) {
 				return dish;
 			}
 		}
@@ -219,6 +219,12 @@ public class DinnerModel extends Observable implements IDinnerModel {
 	public boolean addDishToMenu(Dish dish) {
 		if (pickedDishes.contains(dish)) {
 			return false;
+		}
+		
+		for(Dish picked : pickedDishes) {
+			if(picked.getType() == dish.getType()) {
+				removeDishFromMenu(picked);
+			}
 		}
 		pickedDishes.add(dish);
 		setChanged();

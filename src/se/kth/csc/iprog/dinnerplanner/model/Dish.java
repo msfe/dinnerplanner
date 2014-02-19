@@ -9,10 +9,10 @@ public class Dish {
 	public static final int MAIN = 2;
 	public static final int DESERT = 3;
 	
-	String name;
-	int type; // starter (1), main (2) or desert (3)  
-	String image;
-	String description;
+	private String name;
+	private int type; // starter (1), main (2) or desert (3)  
+	private String image;
+	private String description;
 	
 	Set<Ingredient> ingredients = new HashSet<Ingredient>();
 	
