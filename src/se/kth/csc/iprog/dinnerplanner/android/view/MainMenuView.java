@@ -104,5 +104,4 @@ public class MainMenuView implements Observer {
 			setBold(((Dish) data));
 		}
 	}
-
 }

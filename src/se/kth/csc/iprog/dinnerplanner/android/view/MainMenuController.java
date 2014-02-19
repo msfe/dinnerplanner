@@ -13,64 +13,82 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 public class MainMenuController implements OnClickListener {
-	MainMenuView view;
-	MainMenuActivity activity;
-	DinnerModel model;
+	private MainMenuView view;
+	private MainMenuActivity activity;
+	private DinnerModel model;
+	private boolean isClickable;
 
-	public MainMenuController(MainMenuView view, MainMenuActivity acitvity, DinnerModel model) {
+	public MainMenuController(MainMenuView view, MainMenuActivity acitvity,
+			DinnerModel model) {
 		this.view = view;
 		this.activity = acitvity;
 		this.model = model;
+		isClickable = true;
 		for (int i = 0; i < view.starterList.getChildCount(); i++) {
-			if (! (((RelativeLayout)view.starterList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
+			if (!(((RelativeLayout) view.starterList.getChildAt(i))
+					.getChildAt(0) instanceof ImageButton)) {
 				continue;
 			}
-			
-			ImageButton button = (ImageButton) ((RelativeLayout) view.starterList.getChildAt(i)).getChildAt(0);
+
+			ImageButton button = (ImageButton) ((RelativeLayout) view.starterList
+					.getChildAt(i)).getChildAt(0);
 			button.setOnClickListener(this);
 		}
 		for (int i = 0; i < view.mainList.getChildCount(); i++) {
-			if (! (((RelativeLayout)view.mainList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
+			if (!(((RelativeLayout) view.mainList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
 				continue;
 			}
-			
-			ImageButton button = (ImageButton) ((RelativeLayout) view.mainList.getChildAt(i)).getChildAt(0);
+
+			ImageButton button = (ImageButton) ((RelativeLayout) view.mainList
+					.getChildAt(i)).getChildAt(0);
 			button.setOnClickListener(this);
 		}
 		for (int i = 0; i < view.desertList.getChildCount(); i++) {
-			if (! (((RelativeLayout)view.desertList.getChildAt(i)).getChildAt(0) instanceof ImageButton)) {
+			if (!(((RelativeLayout) view.desertList.getChildAt(i))
+					.getChildAt(0) instanceof ImageButton)) {
 				continue;
 			}
-			
-			ImageButton button = (ImageButton) ((RelativeLayout) view.desertList.getChildAt(i)).getChildAt(0);
+
+			ImageButton button = (ImageButton) ((RelativeLayout) view.desertList
+					.getChildAt(i)).getChildAt(0);
 			button.setOnClickListener(this);
 		}
-		
+
 		view.clearButton.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
-		if (v instanceof DishImageButton) {
-			DishImageButton button = (DishImageButton) v;
-			Dish dish = button.getDish();
+		if (isClickable) {
+			if (v instanceof DishImageButton) {
+				DishImageButton button = (DishImageButton) v;
+				Dish dish = button.getDish();
 
-			activity.activatePopUp(dish);
-		}
-		if (v == view.clearButton){
-			Set<Dish> selectedDishes = clone(model.getFullMenu());
-			for(Dish selectedDish: selectedDishes){
-				model.removeDishFromMenu(selectedDish);
+				activity.activatePopUp(dish);
 			}
-			model.setNumberOfGuests(1);
+			if (v == view.clearButton) {
+				Set<Dish> selectedDishes = clone(model.getFullMenu());
+				for (Dish selectedDish : selectedDishes) {
+					model.removeDishFromMenu(selectedDish);
+				}
+				model.setNumberOfGuests(1);
+			}
 		}
 	}
-	
+
 	private Set<Dish> clone(Set<Dish> set) {
 		Set<Dish> clonedSet = new HashSet<Dish>();
-		for(Dish dish : set) {
+		for (Dish dish : set) {
 			clonedSet.add(dish);
 		}
 		return clonedSet;
+	}
+
+	public void disableClickable() {
+		isClickable = false;
+	}
+
+	public void enableClickable() {
+		isClickable = true;
 	}
 }

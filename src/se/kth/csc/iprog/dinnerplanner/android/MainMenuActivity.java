@@ -14,9 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
-import android.widget.PopupWindow;
 
 public class MainMenuActivity extends Activity {
 
@@ -24,6 +22,7 @@ public class MainMenuActivity extends Activity {
 	LayoutInflater inflater;
 	DinnerModel model;
 	View popUpView;
+	MainMenuController mainController;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class MainMenuActivity extends Activity {
 		// Creating the view class instance
 		MainMenuView mainView = new MainMenuView(
 				findViewById(R.id.this_is_chooseMenu_mainScreen), model);
-		MainMenuController mainControler = new MainMenuController(mainView,
+		mainController = new MainMenuController(mainView,
 				this, model);
 		TopMenuView topView = new TopMenuView(
 				findViewById(R.id.this_is_chooseMenu_topView), model);
@@ -70,11 +69,13 @@ public class MainMenuActivity extends Activity {
 		PopUpMenuView popup = new PopUpMenuView(findViewById(R.id.this_is_chooseMenu_chooseDish),
 				dish, model);
 		new PopUpMenuController(popup, this, model);
-
+		
+		mainController.disableClickable();
 	}
 
 	public void killPopUp() {
 		ViewGroup vg = (ViewGroup) (popUpView.getRootView());
 		vg.removeView(findViewById(R.id.this_is_chooseMenu_chooseDish));
+		mainController.enableClickable();
 	}
 }
